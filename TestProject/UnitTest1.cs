@@ -12,7 +12,7 @@ public class UnitTest1
     /// </summary>
     /// <returns></returns>
     [Fact]
-    public async Task GetCommands_WithAllInSilo_ReturnsAllCommands()
+    public async Task GetCommands_ReturnsAllCommands()
     {
         // arrange
         using var dbContext = await new InMemoryDbBuilder().Add(GenerateCommandAuditLogEntries(5)).Build();
