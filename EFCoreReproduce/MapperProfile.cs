@@ -31,7 +31,12 @@ public class MapperProfile : Profile
         DatabaseExtContext? Context = null;
 
         CreateMap<PaymentOrder, PaymentInformation>()
+
             .ForMember(domain => domain.ValueDate, opt => opt.MapFrom(po => po.ValueDate.ToString("dd-MM-yyyy")))
+
+            // When the line above is commented and the line below is uncommented, the unit test will succeed
+            // although the code is functionally equivalent
+            //.ForMember(domain => domain.ValueDate, opt => opt.MapFrom(po => po.ValueDate.ToUIDateOnlyString()))
             ;
     }
 }

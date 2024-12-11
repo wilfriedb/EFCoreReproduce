@@ -5,6 +5,12 @@ namespace TestProject;
 
 public class UnitTest1
 {
+    /// <summary>
+    /// This unit test will succeed with dotnet 8 / ef core 8, but fail with dotnet 9 / .ef core 9
+    /// This code will succeed with dotnet 9 / ef core 9 with a small modification in the MapperProfile class
+    /// as noted there
+    /// </summary>
+    /// <returns></returns>
     [Fact]
     public async Task GetCommands_WithAllInSilo_ReturnsAllCommands()
     {
